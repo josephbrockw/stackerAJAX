@@ -44,3 +44,26 @@
 	background-color: #F78181;
 	padding: 1em;
 }
+
+.user a {
+	text-decoration: none;
+	font-size: 1.25em;
+	text-align: center;
+	color: orange;
+}
+
+.user a:hover {
+	font-weight: 700;
+}
+
+.result dt {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+.score {
+	text-decoration: none;
+	font-size: 1.25em;
+	/*text-align: center;*/
+	color: orange;
+}

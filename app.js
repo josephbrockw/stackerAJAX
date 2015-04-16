@@ -149,9 +149,9 @@ var showInspiration = function(item) {
 						.attr('href', item.user.link)
 						.text(item.user.display_name);
 
-	var image = "<img src='" + item.user.profile_image + "' alt='" + item.user.display_name + "'>";
+	var image = "<br><img src='" + item.user.profile_image + "' alt='" + item.user.display_name + "'>";
     $(user).append(image);
-	result.find('.post-count').text(item.post_count);
+	// result.find('.post-count').text(item.post_count);
 	result.find('.score').text(item.score);
 
 	return result;
