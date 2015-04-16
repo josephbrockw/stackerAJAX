@@ -145,29 +145,39 @@ var showInspiration = function(item) {
 	var result = $('.templates .inspiration').clone();
 	
 	// Set the answer properties in result
-	var questionElem = result.find('.question-text a');
-	questionElem.attr('href', question.link);
-	questionElem.text(question.title);0
+	var user = result.find('.user a')
+						.attr('href', item.user.link)
+						.text(item.user.display_name);
 
-	// set the date asked property in result
-	var asked = result.find('.asked-date');
-	var date = new Date(1000*question.creation_date);
-	asked.text(date.toString());
-
-	// set the #views for question property in result
-	var viewed = result.find('.viewed');
-	viewed.text(question.view_count);
-
-	// set some properties related to asker
-	var asker = result.find('.asker');
-	asker.html('<p>Name: <a target="_blank" href=http://stackoverflow.com/users/' + question.owner.user_id + ' >' +
-													question.owner.display_name +
-												'</a>' +
-							'</p>' +
- 							'<p>Reputation: ' + question.owner.reputation + '</p>'
-	);
+	var image = "<img src='" + item.user.profile_image + "' alt='" + item.user.display_name + "'>";
+    $(user).append(image);
+	result.find('.post-count').text(item.post_count);
+	result.find('.score').text(item.score);
 
 	return result;
+
+	// questionElem.attr('href', question.link);
+	// questionElem.text(question.title);0
+
+	// // set the date asked property in result
+	// var asked = result.find('.asked-date');
+	// var date = new Date(1000*question.creation_date);
+	// asked.text(date.toString());
+
+	// // set the #views for question property in result
+	// var viewed = result.find('.viewed');
+	// viewed.text(question.view_count);
+
+	// // set some properties related to asker
+	// var asker = result.find('.asker');
+	// asker.html('<p>Name: <a target="_blank" href=http://stackoverflow.com/users/' + question.owner.user_id + ' >' +
+	// 												question.owner.display_name +
+	// 											'</a>' +
+	// 						'</p>' +
+ // 							'<p>Reputation: ' + question.owner.reputation + '</p>'
+	// );
+
+	// return result;
 };
 
 
